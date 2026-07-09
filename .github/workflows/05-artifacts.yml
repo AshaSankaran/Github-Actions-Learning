@@ -1,0 +1,26 @@
+name: Artifacts Demo
+on:
+  workflow_dispatch:
+jobs:
+  create-file:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Report
+        run: |
+          echo "GitHub Actions Learning" > report.txt
+          echo "Created by Asha" >> report.txt
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: learning-report
+          path: report.txt
+  read-file:
+    needs: create-file
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: learning-report
+      - name: Display File
+        run: cat report.txt
