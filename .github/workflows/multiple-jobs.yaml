@@ -10,7 +10,7 @@ jobs:
       - name: IP address
         run: ip a 
       - name: google dns
-        run: ping -c 4 google.com
+        run:  curl -I https://microsoft.com
   info-job: 
     runs-on: ubuntu-latest
     steps:
