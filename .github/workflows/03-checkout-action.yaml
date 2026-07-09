@@ -1,0 +1,15 @@
+name: Checkout Action
+on:
+  push:
+    branches:
+      - main
+jobs:
+  checkout-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      - name: print current directory
+        run: pwd
+      - name: List repo files
+        run: la -la 
