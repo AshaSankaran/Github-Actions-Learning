@@ -1,0 +1,21 @@
+name: Multiple jobs Workflow
+on:
+  push:
+    branches:
+      - main
+jobs:
+  network-job: 
+    runs-on: ubuntu-latest 
+    steps:
+      - name: IP address
+        run: ip a 
+      - name: google dns
+        run: ping google.com
+  info-job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: show Date
+        run: data
+      - name: show current user
+        run: whoami
+  
