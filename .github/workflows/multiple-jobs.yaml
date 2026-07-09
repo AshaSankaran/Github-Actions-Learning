@@ -18,4 +18,19 @@ jobs:
         run: date
       - name: show current user
         run: whoami
+  build-job:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Build steps
+        run: | 
+          echo "Building application..."
+          sleep 10
+          echo "Build Completed"
+  deploy-job:
+    needs: build-job 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy steps
+        run:  echo "Deploying application..."
+
   
