@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+env:
+  STUDENT_NAME: Asha
+  COURSE: Github Actions
 jobs:
   checkout-job:
     runs-on: ubuntu-latest
@@ -12,4 +15,11 @@ jobs:
       - name: print current directory
         run: pwd
       - name: List repo files
-        run: la -la 
+        run: ls -la 
+  env-job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Student Name 
+        run: echo "student: $STUDENT_NAME"
+      - name: Print course 
+        run: echo "Course: $COURSE"
