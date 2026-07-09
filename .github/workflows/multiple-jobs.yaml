@@ -10,12 +10,12 @@ jobs:
       - name: IP address
         run: ip a 
       - name: google dns
-        run: ping google.com
+        run: ping -c 4 google.com
   info-job: 
     runs-on: ubuntu-latest
     steps:
       - name: show Date
-        run: data
+        run: date
       - name: show current user
         run: whoami
   
