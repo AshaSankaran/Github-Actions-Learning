@@ -20,6 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Student Name 
-        run: echo "student: $STUDENT_NAME"
+        run: echo "student:$STUDENT_NAME"
       - name: Print course 
-        run: echo "Course: $COURSE"
+        run: echo "Course:$COURSE"
