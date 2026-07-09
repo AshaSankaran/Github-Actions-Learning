@@ -1,8 +1,6 @@
 name: Checkout Action
 on:
-  push:
-    branches:
-      - main
+    workflow_dispatch:
 env:
   STUDENT_NAME: Asha
   COURSE: Github Actions

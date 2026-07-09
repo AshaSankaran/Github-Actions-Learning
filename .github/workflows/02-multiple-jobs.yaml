@@ -1,8 +1,6 @@
 name: Multiple jobs Workflow
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 jobs:
   network-job: 
     runs-on: ubuntu-latest 

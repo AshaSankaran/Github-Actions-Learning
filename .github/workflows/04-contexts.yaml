@@ -1,0 +1,35 @@
+name: GitHub Context
+on:
+  workflow_dispatch:
+jobs:
+  context-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Print Repository
+        run: echo "Repository = ${{ github.repository }}"
+
+      - name: Print Branch
+        run: echo "Branch = ${{ github.ref_name }}"
+
+      - name: Print Actor
+        run: echo "Triggered By = ${{ github.actor }}"
+
+      - name: Print Workflow
+        run: echo "Workflow = ${{ github.workflow }}"      
+  if-job:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Always Runs
+        run: echo "This step always runs."
+
+      - name: Run Only on Main Branch
+        if: ${{ github.ref_name == 'main' }}
+        run: echo "This is the main branch."
+
+      - name: Run Only on Dev Branch
+        if: ${{ github.ref_name == 'dev' }}
+        run: echo "This is the dev branch."
